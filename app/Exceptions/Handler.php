@@ -2,40 +2,18 @@
 
 namespace App\Exceptions;
 
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Throwable;
-
-class Handler extends ExceptionHandler
+/**
+ * Stub kept for backward-compatibility.
+ * In Laravel 11, exception handling is configured in bootstrap/app.php
+ * via $exceptions->render(...) callbacks.
+ *
+ * @deprecated Use bootstrap/app.php (Laravel 11+).
+ */
+class Handler extends \Illuminate\Foundation\Exceptions\Handler
 {
-    /**
-     * A list of the exception types that are not reported.
-     *
-     * @var array<int, class-string<Throwable>>
-     */
-    protected $dontReport = [
-        //
-    ];
-
-    /**
-     * A list of the inputs that are never flashed for validation exceptions.
-     *
-     * @var array<int, string>
-     */
     protected $dontFlash = [
         'current_password',
         'password',
         'password_confirmation',
     ];
-
-    /**
-     * Register the exception handling callbacks for the application.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        $this->reportable(function (Throwable $e) {
-            //
-        });
-    }
 }

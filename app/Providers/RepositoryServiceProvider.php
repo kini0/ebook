@@ -15,7 +15,7 @@ use Illuminate\Support\ServiceProvider;
 class RepositoryServiceProvider extends ServiceProvider
 {
     /** @var array<class-string, class-string> */
-    protected array $bindings = [
+    public array $bindings = [
         EbookRepositoryInterface::class       => EbookRepository::class,
         OrderRepositoryInterface::class       => OrderRepository::class,
         TransactionRepositoryInterface::class => TransactionRepository::class,
